@@ -13,11 +13,11 @@ export const handler = async (event) => {
 
   const data = await res.json()
 
+  // CORS headers are handled by Lambda Function URL configuration
   return {
     statusCode: res.status,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
     },
     body: JSON.stringify(data),
   }
